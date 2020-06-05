@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace GenericAlgorithms
 {
@@ -208,9 +209,9 @@ namespace GenericAlgorithms
             //Demo Data
             //2D array
             int[,] twoDArray = new int[3, 4] {
-            {0, 1, 2, 3} ,   
-            {4, 5, 6, 7} ,   
-            {8, 9, 10, 11}   
+            {0, 1, 2, 3} ,
+            {4, 5, 6, 7} ,
+            {8, 9, 10, 11}
             };
 
             //1darray
@@ -238,6 +239,291 @@ namespace GenericAlgorithms
 
 
 
+
+            //List<char> newlist = new List<char> { 'a','b','c'};
+            //List<char> newlist = new List<char> { 'a', 'b', 'c' ,'a'};
+            //List<char> newlist = new List<char> { 'a', 'b', 'a', 'b', 'c', 'b', 'a', 'c', 'a', 'd', 'e', 'f', 'e', 'g', 'd', 'e', 'h', 'i', 'j', 'h', 'k', 'l', 'i', 'j' };
+            //List<char> newlist = new List<char> { 'a', 'b', 'a', 'b', 'c', 'b', 'a', 'c', 'a', 'd', 'e', 'f', 'e', 'g', 'd', 'e', 'h', 'i', 'j', 'h', 'k', 'l', 'i', 'j','a' };
+            //List<int> res = AmzTestPracticeClass.lengthEachScene(newlist);
+            //for (int i = 0; i < res.Count; i++)
+            //{
+            //    Console.WriteLine(res[i]);
+            //}
+
+
+            //int numFeatures = 6, topFeatures = 2, numFeatureRequests=7;
+            //List<string> possibleFeatures = new List<string> { "storage", "battery", "hover", "alexa", "waterproof", "solar" };
+            //List<string> featureRequests = new List<string> {
+            //   "I wish my kindle had even more storage!",
+            //    "I wish the battery life om my kindle lasted 2 years",
+            //    "I read in the bath and would enjoy a waterproof Kindle",
+            //    "Waterproof and increased battery are my top two requests",
+            //    "I want to take my Kindle into the shower.Waterproof please waterproof!",
+            //    "It would be neat if my Kindle would hover on my desk when not in use",
+            //    "How cool would it be if my Kindle charged in the sun via solar power?"
+
+            //};
+            //List<string> Result=AmzTestPracticeClass.popularNFeatures(numFeatures, topFeatures, possibleFeatures, numFeatureRequests, featureRequests);
+            //for (int i = 0; i < Result.Count; i++)
+            //{
+            //    Console.WriteLine(Result[i]);
+            //}
+
+            //string a = "Waterproof";
+            //string b = "waterproof";
+            //bool isfound = a.Equals(b.ToLower());
+            //if (isfound)
+            //    Console.Write("true");
+            //else
+            //    Console.Write("false");
+
+            //string[] words = new string[] {"i", "love", "leetcode", "i", "love", "coding"};
+            //int k = 2;
+            //string[] words = new string[] { "the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is" };
+            //int k = 4;
+            //IList<string> result= TopKFrequentClass.TopKFrequent(words, k);
+            //for (int i = 0; i < result.Count; i++)
+            //{
+            //    Console.WriteLine(result[i]);
+            //}
+
+
+
+            //int[,] grid = new int[,] {
+            //                            {1,0,0,0,0},
+            //                            {0,1,0,1,0},
+            //                            {0,0,1,0,0},
+            //                            {0,0,0,1,0},
+            //                            {0,0,0,0,1}
+            //};
+
+            //int[,] grid = new int[,] {
+            //                            {0, 0, 1, 0, 0, 0 },
+            //                            {0, 0, 0, 0, 0, 0 },
+            //                            {0, 0, 0, 0, 0, 1},
+            //                            {0, 0, 0, 0, 0, 0},
+            //                            {0, 1, 0, 0, 0, 0}
+            //};
+
+            //int[,] grid = new int[,] {
+            //                            {0, 0, 1},
+            //                            {0, 0, 0}
+            //};
+
+            //int numOfDays = Amazonhasa2DgridofCellTowersClass.DaystoUpgradeServer(2, 3, grid);
+
+            ////int numOfDays = MinimumDays(rows, column, grid);
+            //Console.WriteLine("Num of Days is :[" + numOfDays + "]");
+
+
+            //char[][] islanc2d = new char[][]
+            //{
+            //    new char[]{'1','1','0','0','0' },
+            //    new char[]{ '1', '1', '0', '0', '0' },
+            //    new char[]{ '0', '0', '1', '0', '0' },
+            //     new char[]{ '0', '0', '0', '1', '1' },
+            //};
+
+            //char[][] islanc2d = new char[][]
+            //{
+            //    new char[]{'1','1','1','1','0' },
+            //    new char[]{ '1', '1', '0', '1', '0' },
+            //    new char[]{ '1', '1', '0', '0', '0' },
+            //     new char[]{ '0', '0', '0', '0', '0' },
+            //};
+
+            //char[][] islanc2d = new char[][]
+            //{
+            //    new char[]{'1' },
+            //    new char[]{ '1' }
+            //};
+
+            //    char[][] islanc2d = new char[][] {
+
+            //                 new char[]{'0','1', '0','1','0' },
+            //                 new char[]{'0','0', '1','1','1'},
+            //                 new char[]{'1','0', '0','1','0'},
+            //                 new char[]{'0','1', '1','0','0' },
+            //                 new char[]{'1','0', '1','0','1' }
+            //                 }; 
+
+            //int res=NumIslandsClass.NumIslands(islanc2d);
+            //    Console.WriteLine(res);
+
+            //int[][] islandArray = new int[][]
+            //{
+
+            //new int[]{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+            //new int[]{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
+            //new int[]{0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+            //new int[]{0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0 },
+            //new int[]{0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0 },
+            //new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+            //new int[]{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
+            //new int[]{ 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
+            //};
+
+            //int res= NumIslandsClass.MaxAreaOfIsland(islandArray);
+            //Console.Write(res);
+
+            //string paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
+            //string[] banned=new string[]{ "hit" };
+            //string paragraph = "Bob. hIt, baLl";
+            //string[] banned = new string[] { "bob", "hit" };
+            //string paragraph = "L, P!X!C; u!P ? w!P.G, S? l? X? D. w? m? f? v, x? i.z; x' m! U' M!j ? V; l.S!j ? r, K.O? k? p? p, H!t!z' X! v. u; F, h; s? X? K. y, Y! L; q! y? j, o? D' y? F' Z; E? W; W' W!n!p' U. N; w? V' y!Q; J, o!T ? g ? o!N' M? X? w! V. w? o' k.W.y, k; o' m! r; i, n. k, w; U? S? t; O' g' z. V. N? z, W? j! m? W! h; t! V' T!Z ? R' w, w? y? y; O' w; r? q. G, V.x? n, Y; Q.s? S. G.f, s!U ? l.o!i.L; Z' X! u. y, Q. q; Q, D; V. m. q. s? Y, U; p? u! q? h? O. W' y? Z!x!r.E, R, r' X' V, b.z, x!Q; y, g' j; j. q; W; v' X!J' H? i' o? n, Y. X!x ? h ? u; T? l!o ? z.K' z' s; L? p? V' r. L? Y; V! V' S.t? Z' T' Y.s? i? Y!G ? r; Y; T!h!K; M.k.U; A!V ? R ? C' x! X. M; z' V!w.N.T ? Y' w? n, Z, Z? Y' R; V' f; V' I; t? X? Z; l? R, Q!Z.R.R, O.S!w; p' T. u? U! n, V, M. p? Q, O? q' t.B, k.u.H' T; T? S; Y! S! i? q! K' z' S! v; L. x; q; W? m? y, Z! x. y. j? N' R' I? r? V! Z; s, O? s; V, I, e? U' w!T ? T!u; U!e ? w ? z; t!C!z ? U, p' p! r. x; U! Z; u! j; T! X! N' F? n!P' t, X. s; q'";
+            //string[] banned ={"m", "i", "s", "w", "y", "d", "q", "l", "a", "p", "n", "t", "u", "b", "o", "e", "f", "g", "c", "x"};
+            //string res= MostCommonWordClass.MostCommonWord(paragraph, banned);
+            //Console.WriteLine(res);
+
+            //string str = "42";
+            //string str = "   -42";
+            //string str = "4193 with words";
+            //string str = "-91283472332";
+            //string str = "3.14159";
+            //string str = "";
+            //string str = "+1";
+            //string str = " ";
+            //string str = "+-2";
+            //string str = "  -0012a42";
+            //string str = "2147483646";
+            //string str = "-2147483647";
+            //string str = "-91283472332";
+            //string str = "2147483648";
+            //string str= "-2147483648";
+            //string str = "-6147483648";
+            //string str = "-13+8";
+            //int res = MyAtoiClass.atoi(str);
+            //Console.WriteLine(res);
+
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 2;
+            //tree.left=new TreeNode { val = 1 };
+            //tree.right = new TreeNode { val = 3 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 1;
+            //tree.left = new TreeNode { val = 1 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 1;
+            //tree.left = new TreeNode { val = -1 };
+
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 10;
+            //tree.left = new TreeNode { val = 5 };
+            //tree.right = new TreeNode { val = 15 };
+            //tree.right.left = new TreeNode { val = 6 };
+            //tree.right.right = new TreeNode { val = 20 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 10;
+            //tree.left = new TreeNode { val = 5 };
+            //tree.right = new TreeNode { val = 15 };
+            //tree.right.left = new TreeNode { val = 6 };
+            //tree.right.right = new TreeNode { val = 20 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 3;
+            //tree.right = new TreeNode { val = 30 };
+            //tree.right.left = new TreeNode { val = 10 };
+            //tree.right.left.right = new TreeNode { val = 15 };
+            //tree.right.left.right.right = new TreeNode { val = 45 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 2147483647;
+            //tree.left = new TreeNode { val = 2147483647 };
+            //bool res = ValidateBinaryTreeClass.IsValidBST2(tree);
+
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = int.MinValue;
+            //tree.right = new TreeNode { val = int.MaxValue };
+            //tree.right.left = new TreeNode { val = int.MinValue };
+            //bool res = ValidateBinaryTreeClass.IsValidBST2(tree);
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = int.MinValue;
+            //bool res = ValidateBinaryTreeClass.IsValidBST2(tree);
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = int.MinValue;
+            //tree.left = new TreeNode { val = int.MinValue };
+            //bool res = ValidateBinaryTreeClass.IsValidBST2(tree);
+
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 2147483647;
+            //tree.left = new TreeNode { val = 2147483647 };
+            //bool res = ValidateBinaryTreeClass.IsValidBST2(tree);
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = int.MinValue;
+            //tree.right = new TreeNode { val = int.MaxValue };
+            //bool res = ValidateBinaryTreeClass.IsValidBST(tree);
+
+            //Console.WriteLine(res);
+
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 3;
+            //tree.left = new TreeNode { val = 9 };
+            //tree.right = new TreeNode { val = 20 };
+            //tree.right.left = new TreeNode { val = 15 };
+            //tree.right.right = new TreeNode { val = 7 };
+            //IList<IList<int>> res = LevelOrderClass.LevelOrder(tree);
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 1;
+            //tree.left = new TreeNode { val = 2 };
+            //tree.right = new TreeNode { val = 3 };
+            //tree.left.left = new TreeNode { val = 4 };
+            //tree.left.right = new TreeNode { val = 5 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 1;
+            //tree.left = new TreeNode { val = 2 };
+            //tree.right = new TreeNode { val = 3 };
+            //tree.left.left = new TreeNode { val = 4 };
+            //tree.right.right = new TreeNode { val = 5 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 3;
+            //tree.left = new TreeNode { val = 9 };
+            //tree.right = new TreeNode { val = 20 };
+            //tree.right.left = new TreeNode { val = 15 };
+            //tree.right.right = new TreeNode { val = 7 };
+
+            //IList<IList<int>> res = ZigzagLevelOrderClass.ZigzagLevelOrder(tree);
+
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 1;
+            //tree.left = new TreeNode { val = 2 };
+            //tree.right = new TreeNode { val = 3 };
+
+            //Console.WriteLine(HasPathSumClass.HasPathSum(tree, 6));
+
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = 1;
+            //tree.left = new TreeNode { val = 2 };
+            //tree.right = new TreeNode { val = 3 };
+
+            //TreeNode tree = new TreeNode();
+            //tree.val = -10;
+            ////tree.left = new TreeNode { val = 9 };
+            //tree.right = new TreeNode { val = 20 };
+            //tree.right.left = new TreeNode { val = 15 };
+            //tree.right.right = new TreeNode { val = 7 };
+
+            //Console.WriteLine(MaximumPathSumClass.MaxPathSum(tree));
+
+
+
+            int num = 19;
+            Console.WriteLine(IntegerToRomanClass.IntToRoman(num));
 
             Console.ReadKey();
         }

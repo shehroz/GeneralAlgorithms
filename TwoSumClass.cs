@@ -22,13 +22,13 @@ namespace GenericAlgorithms
                 }
                 else
                 {
-                    if(!map.ContainsKey(comp))
+                    if (!map.ContainsKey(comp))
                         map.Add(comp, i);
                 }
             }
             return res;
         }
 
-        
+
     }
 }
