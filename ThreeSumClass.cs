@@ -8,68 +8,70 @@ namespace GenericAlgorithms
     class ThreeSumClass
     {
         
-        public static int[] CreateNewArray(int[] arr, int startingIndex)
-        {
-            int[] res = new int[arr.Length - 1];
-            int index = 0;
-            for (int i = 0; i < arr.Length - 1; i++)
-            {
-                if (i != startingIndex)
-                    res[index++] = arr[i];
-            }
-            return res;
-        }
-        public static int[] SumofDualOptimize(int[] arr, int sum)
-        {
-            int[] result = null;
-            Dictionary<int, int> dict = new Dictionary<int, int>();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                int comp = sum - arr[i];
-                if (dict.ContainsKey(arr[i]))
-                {
-                    result = new int[2];
-                    result[0] = arr[i];
-                    result[1] = comp;
+        //public static int[] CreateNewArray(int[] arr, int startingIndex)
+        //{
+        //    int[] res = new int[arr.Length - 1];
+        //    int index = 0;
+        //    for (int i = 0; i < arr.Length - 1; i++)
+        //    {
+        //        if (i != startingIndex)
+        //            res[index++] = arr[i];
+        //    }
+        //    return res;
+        //}
+        //public static int[] SumofDualOptimize(int[] arr, int sum)
+        //{
+        //    int[] result = null;
+        //    Dictionary<int, int> dict = new Dictionary<int, int>();
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        int comp = sum - arr[i];
+        //        if (dict.ContainsKey(arr[i]))
+        //        {
+        //            result = new int[2];
+        //            result[0] = arr[i];
+        //            result[1] = comp;
 
-                    return result;
-                }
-                else
-                {
-                    if (!dict.ContainsKey(comp))
-                        //dict.Add(comp, arr[i]);
-                        dict.Add(comp, i);
-                }
-            }
-            return result;
-        }
-        public static int[] Sort(int[] arr)
-        {
-            int temp;
-            for (int j = 0; j <= arr.Length - 2; j++)
-            {
-                for (int i = 0; i <= arr.Length - 2; i++)
-                {
-                    if (arr[i] > arr[i + 1])
-                    {
-                        temp = arr[i + 1];
-                        arr[i + 1] = arr[i];
-                        arr[i] = temp;
-                    }
-                }
-            }
-            return arr;
-        }
-        public static bool IsAllZeros(int[] arr)
-        {
+        //            return result;
+        //        }
+        //        else
+        //        {
+        //            if (!dict.ContainsKey(comp))
+        //                //dict.Add(comp, arr[i]);
+        //                dict.Add(comp, i);
+        //        }
+        //    }
+        //    return result;
+        //}
+        //public static int[] Sort(int[] arr)
+        //{
+        //    int temp;
+        //    for (int j = 0; j <= arr.Length - 2; j++)
+        //    {
+        //        for (int i = 0; i <= arr.Length - 2; i++)
+        //        {
+        //            if (arr[i] > arr[i + 1])
+        //            {
+        //                temp = arr[i + 1];
+        //                arr[i + 1] = arr[i];
+        //                arr[i] = temp;
+        //            }
+        //        }
+        //    }
+        //    return arr;
+        //}
+        //public static bool IsAllZeros(int[] arr)
+        //{
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i] != 0) return false;
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        if (arr[i] != 0) return false;
 
-            }
-            return true;
-        }
+        //    }
+        //    return true;
+        //}
+
+
         public static IList<IList<int>> ThreeSum(int[] num)
         {
             Array.Sort(num);

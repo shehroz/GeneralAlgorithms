@@ -522,9 +522,167 @@ namespace GenericAlgorithms
 
 
 
-            int num = 19;
-            Console.WriteLine(IntegerToRomanClass.IntToRoman(num));
+            //int num = 19;
+            //Console.WriteLine(IntegerToRomanClass.IntToRoman(num));
 
+            //int[] arr = { -1, 2, 1, -4 };
+            //int target = 1;
+            //int res = ThreeSumClosestClass.ThreeSumClosest2(arr, target);
+            //Console.WriteLine(res);
+
+            //int num = -17;
+            //Console.WriteLine(Math.Abs(num));
+
+            //int[] arr = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+            //int res = ContainerwithMostWaterClass.MaxArea_Optimized(arr);
+            //Console.Write(res);
+
+            //string haystack = "aaaaa", needle = "bba" ;
+            //string haystack = "hello", needle = "ll";
+            ////string haystack = "Shehroz Ahmed Khan", needle = "Ahmed";
+            ////string haystack = "mississippi", needle = "issipi";
+            //int index = StrStrClass.StrStr(haystack, needle);
+            //Console.WriteLine(index);
+
+            //int[][] arr2d = { 
+            //    new int[]{1,2,3 },
+            //    new int[]{4,5,6 },
+            //    new int[]{7,8,9 },
+            //     };
+            //RotateImageClass.Rotate(arr2d);
+
+            //string[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+            //GroupAnagramsClass.GroupAnagrams(strs);
+
+            //string str=MinWindowClass.MinWindow("ADOBECODEBANC", "ABC");
+            //Console.WriteLine(str);
+
+            //string v1 = "0.1", v2 = "1.1";
+            //string v1 = "1.0.1", v2 = "1";
+            //string v1 = "7.5.2.4", v2 = "7.5.3";
+            //string v1 = "1.0", v2 = "1.0.0";
+            //string v1 = "1.01", v2 = "1.001";
+            //string v1 = "1", v2 = "01";
+
+            //int i= CompareVersionClass.CompareVersion(v1,v2);
+            //Console.WriteLine(i);
+
+            //int[] arr = { 1, 2, 3, 4 };
+            ////int[] arr = { 1,0 };
+            ////int[] arr = { 4,5,1,8,2 };
+            //int[] res= ProductExceptSelfClass.ProductExceptSelf3(arr);
+            //for (int i = 0; i < res.Length; i++)
+            //{
+            //    Console.WriteLine(res[i]);
+            //}
+
+            //string[] strs = { "flower", "flow", "flight" };
+            ////string[] strs = { "dog", "racecar", "car" };
+            //string r=LongestCommonPrefixClass.LongestCommonPrefix(strs);
+            //Console.WriteLine(r);
+
+            //ListNode num1 = new ListNode(2);
+            //num1.next = new ListNode(4);
+            //num1.next.next = new ListNode(3);
+
+            //ListNode num2 = new ListNode(5);
+            //num2.next = new ListNode(6);
+            //num2.next.next = new ListNode(4);
+
+            //ListNode num1 = new ListNode(1);
+            //num1.next = new ListNode(8);
+
+            //ListNode num2 = new ListNode(0);
+
+            //ListNode num1 = new ListNode(9);
+            //num1.next = new ListNode(8);
+
+            //ListNode num2 = new ListNode(1);
+
+            //ListNode num1 = new ListNode(1);
+
+            //ListNode num2 = new ListNode(9);
+            //num2.next = new ListNode(9);
+
+            //ListNode num1 = new ListNode(1);
+            //num1.next = new ListNode(8);
+            //ListNode num2 = new ListNode(0);
+
+            //ListNode result = linkedlistAddTwoNumbersClass.AddTwoNumbers3(num1, num2);
+            //if (result != null)
+            //{
+            //    while(result!=null)
+            //    {
+            //        Console.WriteLine(result.val);
+            //        result = result.next;
+            //    }
+            //}
+
+
+            //ListNode num1 = new ListNode(1);
+            //num1.next = new ListNode(2);
+            //num1.next.next = new ListNode(4);
+
+            //ListNode num2 = new ListNode(1);
+            //num2.next = new ListNode(3);
+            //num2.next.next = new ListNode(4);
+
+
+
+            //ListNode num1 = new ListNode(-10);
+            //num1.next = new ListNode(-9);
+            //num1.next.next = new ListNode(-6);
+            //num1.next.next.next = new ListNode(-4);
+            //num1.next.next.next.next = new ListNode(1);
+            //num1.next.next.next.next.next = new ListNode(9);
+            //num1.next.next.next.next.next.next = new ListNode(9);
+
+            //ListNode num2 = new ListNode(-5);
+            //num2.next = new ListNode(-3);
+            //num2.next.next = new ListNode(0);
+            //num2.next.next.next = new ListNode(7);
+            //num2.next.next.next.next = new ListNode(8);
+            //num2.next.next.next.next.next = new ListNode(8);
+
+            //ListNode result = MergeTwoSortedListClass.MergeTwoLists(num1, num2);
+            //if (result != null)
+            //{
+            //    while (result != null)
+            //    {
+            //        Console.WriteLine(result.val);
+            //        result = result.next;
+            //    }
+            //}
+            //ListNode l1 = new ListNode(1);
+            //l1.next = new ListNode(4);
+            //l1.next.next = new ListNode(5);
+
+            //ListNode l2 = new ListNode(1);
+            //l2.next = new ListNode(3);
+            //l2.next.next = new ListNode(4);
+
+            //ListNode l3 = new ListNode(2);
+            //l3.next = new ListNode(6);
+            //ListNode[] list = new ListNode[]
+            //{
+            //    l1,
+            //    l2,
+            //    l3
+            //};
+            //ListNode result = MergeKListsClass.MergeKLists(list);
+            //if (result != null)
+            //{
+            //    while (result != null)
+            //    {
+            //        Console.WriteLine(result.val);
+            //        result = result.next;
+            //    }
+            //}
+
+
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            int res = FindNMaximumClass.FindNHighest(arr);
+            Console.WriteLine(res);
             Console.ReadKey();
         }
 

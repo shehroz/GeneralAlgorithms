@@ -8,40 +8,29 @@ namespace GenericAlgorithms
     {
         public  static int StrStr(string haystack, string needle)
         {
-            if (haystack == "" && needle == "")
+            if ((haystack == "" && needle == "") || needle == "")
                 return 0;
             else if (haystack == "")
                 return -1;
-            else if (needle == "")
-                return 0;
-            int index = 0;
-            bool IsFound = false;
-            int lastIndex = 0;
-            for (int i = 0; i < haystack.Length; i++)
+
+            int index = 0, lastindex = -1;
+            for (int i = 0; i < haystack.Length && index < needle.Length; i++)
             {
                 if (haystack[i] == needle[index])
                 {
                     index++;
-                    IsFound = true;
-                    lastIndex = i;
-                    if (index >= needle.Length)
-                        break;
+                    lastindex = i;
                 }
                 else
                 {
-                    i -= index;
+                    i = i - index;
                     index = 0;
-                    IsFound = false;
                 }
             }
-            if(IsFound && index==needle.Length)
-            {
-                return lastIndex - (needle.Length-1) ;
-            }
+            if (lastindex != -1 && index == needle.Length)
+                return lastindex - index + 1;
             else
-            {
                 return -1;
-            }
         }
 
         

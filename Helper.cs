@@ -38,6 +38,12 @@ namespace GenericAlgorithms
         {
             return (int)(c - '0');
         }
+        public static int ToInt(string c)
+        {
+            //char ch= Convert.ToChar(c);
+            //return (int)(ch - '0');
+            return Convert.ToInt32(c);
+        }
         static T CreateJaggedArray<T>(params int[] lengths)
         {
             return (T)InitializeJaggedArray(typeof(T).GetElementType(), 0, lengths);
