@@ -29,6 +29,56 @@ namespace GenericAlgorithms
             return res;
         }
 
+        
+        //The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.
+        public static int[] TwoSum_anotherversio(int[] numbers, int target)
+        {
+            int[] res = new int[2];
+            int sum = 0;
+            for (int start = 0, end = numbers.Length - 1; start < end;)
+            {
+                sum = numbers[start] + numbers[end];
+                if (sum == target)
+                {
+                    res[0] = start + 1;
+                    res[1] = end + 1;
+                    return res;
+                }
+                else if (sum > target)
+                {
+                    end--;
+                }
+                else if (sum < target)
+                {
+                    start++;
+                }
+                else
+                    start++;
+            }
+            return res;
+        }
 
+
+        ///for Arrays Two sum array input array is sorted
+        public static int[] TwoSum_array(int[] numbers, int target)
+        {
+            int[] res = new int[2];
+
+            for (int start = 0, end = numbers.Length - 1; start < end;)
+            {
+                int sum = numbers[start] + numbers[end];
+                if (sum == target)
+                {
+                    res[0] = start + 1;
+                    res[1] = end + 1;
+                    return res;
+                }
+                else if (sum > target)
+                    end--;
+                else
+                    start++;
+            }
+            return res;
+        }
     }
 }
