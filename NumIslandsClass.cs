@@ -106,5 +106,55 @@ namespace GenericAlgorithms
             return count;
         }
         #endregion
+
+        public static int MaxNumberOfIslands(char[][] grid)
+        {
+            int MaxCount = 0;
+            
+            for (int i = 0; i < grid.Length; i++)
+            {
+                for (int j = 0; j < grid[i].Length; j++)
+                {
+                    if (grid[i][j] == '1')
+                    {
+                        int numofisland = 1;
+                        numofisland+=MaxNumberOfIslands_CheckAdjacent(i, j, grid);
+                        MaxCount = Math.Max(MaxCount, numofisland);
+                        
+                    }
+                }
+            }
+            return MaxCount;
+        }
+        private static int MaxNumberOfIslands_CheckAdjacent(int i,int j,char[][] grid)
+        {
+            //if (i < 0 || i > grid.Length - 1 || j < 0 || j > grid[i].Length - 1 || grid[i][j] != '1')
+            //    return 0;
+
+            int count = 0;
+            if(i>0)
+            {
+                if (grid[i - 1][j] == '1')
+                    count++;
+            }
+            if(j>0)
+            {
+                if (grid[i][j - 1] == '1')
+                    count++;
+            }
+            if(i<grid.Length-1)
+            {
+                if (grid[i + 1][j] == '1')
+                    count++;
+            }
+            if(j<grid[i].Length-1)
+            {
+                if (grid[i][j + 1] == '1')
+                    count++;
+            }
+            return count;
+        }
+
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using static GenericAlgorithms.CopyRandomListClass;
 
 namespace GenericAlgorithms
 {
@@ -8,11 +9,13 @@ namespace GenericAlgorithms
     {
         static void Main(string[] args)
         {
-            ////int[] array = { 2, 7, 11, 15 };
-            ////int sum = 9;
+            //int[] array = { 2, 7, 11, 15 };
+            //int sum = 9;
 
             //int[] array = { 230, 863, 916, 585, 981, 404, 316, 785, 88, 12, 70, 435, 384, 778, 887, 755, 740, 337, 86, 92, 325, 422, 815, 650, 920, 125, 277, 336, 221, 847, 168, 23, 677, 61, 400, 136, 874, 363, 394, 199, 863, 997, 794, 587, 124, 321, 212, 957, 764, 173, 314, 422, 927, 783, 930, 282, 306, 506, 44, 926, 691, 568, 68, 730, 933, 737, 531, 180, 414, 751, 28, 546, 60, 371, 493, 370, 527, 387, 43, 541, 13, 457, 328, 227, 652, 365, 430, 803, 59, 858, 538, 427, 583, 368, 375, 173, 809, 896, 370, 789 };
             //int sum = 542;
+            //int[] array = { 3,2,4 };
+            //int sum = 6;
 
             //int[] res = TwoSumClass.TwoSum(array, sum);
             //for (int i = 0; i < res.Length; i++)
@@ -363,8 +366,36 @@ namespace GenericAlgorithms
             //new int[]{ 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
             //};
 
-            //int res= NumIslandsClass.MaxAreaOfIsland(islandArray);
+            //int res = NumIslandsClass.MaxAreaOfIsland(islandArray);
+            //int res = NumIslandsClass.MaxNumberOfIslands(islanc2d);
             //Console.Write(res);
+
+            int[][] islanc2d = new int[][]
+            {
+                new int[]{2,1,1 },
+                new int[]{ 1,1,0 },
+                new int[]{ 0,1,1 },
+             };
+
+            //int[][] islanc2d = new int[][]
+            //{
+            //    new int[]{2,1,1 },
+            //    new int[]{ 0,1,1},
+            //    new int[]{ 1,0,1 },
+            // };
+            //int[][] islanc2d = new int[][]
+            //{
+            //    new int[]{0,2 },
+            //};
+            //int[][] islanc2d = new int[][]
+            //{
+            //    new int[]{1,2,1,1,2,1,1 },
+            //};
+
+
+
+            //int r=OrangesRottingClass.OrangesRotting(islanc2d);
+            //Console.WriteLine(r);
 
             //string paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
             //string[] banned=new string[]{ "hit" };
@@ -680,9 +711,142 @@ namespace GenericAlgorithms
             //}
 
 
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
-            int res = FindNMaximumClass.FindNHighest(arr);
-            Console.WriteLine(res);
+            //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            //int res = FindNMaximumClass.FindNHighest(arr);
+            //Console.WriteLine(res);
+
+            //string digits = "23";
+            //IList<string> letter = LetterCombinationsClass.LetterCombinations(digits);
+            //for (int i = 0; i < letter.Count; i++)
+            //{
+            //    Console.WriteLine(letter[i]);
+            //}
+
+
+            char[][] board = new char[][]
+            {
+                new char[]{ 'A','B','C','E'},
+                new char[] { 'S','F','C','S'},
+                new char[] { 'A','D','E','E'}
+            };
+            //char[][] board = new char[][]
+            //{
+            //    new char[]{ 'a','a'}
+            //};
+            //char[][] board = new char[][]
+            //{
+            //    new char[]{ 'a','b'},
+            //    new char[] { 'c','d'}
+
+            //};
+            //string word = "ABCCED";
+            ////string word = "SEE";
+            ////string word = "ABCB";
+            ////string word = "aaa";
+            ////string word = "abcd";
+            //bool isfound=WordSearchClass.Exist(board, word);
+            //Console.Write(isfound);
+
+            //int n = 30;
+            //int r = TrailingZerosClass.TrailingZeroes(n);
+            //Console.WriteLine(r);
+
+
+            //ListNode list = new ListNode(1);
+            //list.next = new ListNode(4);
+            //list.next.next = new ListNode(3);
+            //list.next.next.next = new ListNode(2);
+            //list.next.next.next.next = new ListNode(5);
+            //list.next.next.next.next.next = new ListNode(2);
+            //ListNode result = PartitionClass.Partition_SafeSpace(list, 3);
+
+            //Node n = new Node(7);
+
+            //n.next = new Node(13);
+            //n.next.random = new Node(0);
+
+            //n.next.next = new Node(11);
+            //n.next.next.random = new Node(4);
+
+            //n.next.next.next = new Node(10);
+            //n.next.next.next.random = new Node(2);
+
+
+            //n.next.next.next.next = new Node(1);
+            //n.next.next.next.next.random = new Node(0);
+
+
+            //CopyRandomListClass.CopyRandomList(n);
+
+
+            //ListNode cur = new ListNode(1);
+            //cur.next = new ListNode(2);
+            //cur.next.next = new ListNode(3);
+            //cur.next.next.next = new ListNode(4);
+            //cur.next.next.next.next = new ListNode(5);
+            //int k = 2;//3
+
+            //ListNode cur = new ListNode(1);
+            //cur.next = new ListNode(2);
+            //int k = 2;
+
+            //ListNode cur = new ListNode(1);
+            //cur.next = new ListNode(2);
+            //cur.next.next = new ListNode(3);
+            //cur.next.next.next = new ListNode(4);
+            //int k = 2;
+
+
+            //ListNode result = ReverseKGroupClass.ReverseKGroup(cur, k);
+            //if (result != null)
+            //{
+            //    while (result != null)
+            //    {
+            //        Console.WriteLine(result.val);
+            //        result = result.next;
+            //    }
+            //}
+
+            ////List<string> list = new List<string>{ "hot", "dot", "dog", "lot", "log", "cog" };
+            //string beginword = "hit";
+            //string endword = "cog";
+
+            //List<string> list = new List<string>{ "ymann", "yycrj", "oecij", "ymcnj", "yzcrj", "yycij", "xecij", "yecij", "ymanj", "yzcnj", "ymain"};
+            //string beginword = "ymain";
+            //string endword = "oecij";
+
+            //int r=LadderLengthClass.LadderLength(beginword, endword, list);
+            //Console.WriteLine(r);
+
+
+            //int[] arr = { 3, 0, 1 };
+            //int r= MissingNumberClass.MissingNumber(arr);
+            //Console.WriteLine(r);
+
+
+            //char[] strarr = new char[]{'a', 'a', 'b', 'b', 'c', 'c', 'c'};
+            //char[] strarr = new char[] { 'a'};
+            //char[] strarr = new char[]{ 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
+            //int r= CompressClass.Compress(strarr);
+
+            //HashSet<string> hp = new HashSet<string>();
+            //hp.Add("shehroz");
+            //hp.Add("shehroz");
+            //foreach (var item in hp)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //string str = "aab";
+            ///string str = "aaaabcd";
+            //string str = "aaaab";
+            //string r=ReorganizeStringClass.ReorganizeString(str);
+            //Console.WriteLine(r);
+
+
+            int[] arr = { 1, 2, 5 };
+            int r=CoinChangeClass.CoinChange(arr, 11);
+            Console.WriteLine(r);
             Console.ReadKey();
         }
 
