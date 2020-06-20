@@ -5,115 +5,53 @@ using System.Linq;
 
 namespace GenericAlgorithms
 {
-    public class PriorityQueue<T> where T : IComparable<T>
-    {
-        private List<T> data;
-
-        public PriorityQueue()
-        {
-            this.data = new List<T>();
-        }
-        public T Peek()
-        {
-            T frontItem = data[0];
-            data.Remove(frontItem);
-            return frontItem;
-        }
-        public int Count()
-        {
-            return data.Count;
-        }
-        public void Enqueue(T item)
-        {
-            data.Add(item);
-            data.Sort();
-            //int ci = data.Count - 1;
-            //while (ci > 0)
-            //{
-            //    int pi = (ci - 1) / 2;
-            //    if (data[ci].CompareTo(data[pi]) >= 0)
-            //        break;
-            //    T tmp = data[ci];
-            //    data[ci] = data[pi];
-            //    data[pi] = tmp;
-            //    ci = pi;
-            //}
-        }
-    }
-
     public class MergeKListsClass
     {
-        public static ListNode MergeKLists(ListNode[] lists)
+        public ListNode MergeKLists(ListNode[] lists)
         {
-            PriorityQueue<int> queue = new PriorityQueue<int>();
-            foreach (ListNode item in lists)
-            {
-                ListNode curItem = item;
-                while (curItem != null)
-                {
-                    queue.Enqueue(curItem.val);
-                    curItem = curItem.next;
-                }
-            }
-
-            ListNode current = new ListNode(-1);
-            ListNode head = current;
-            while (queue.Count() != 0)
-            {
-                current.next = new ListNode(queue.Peek());
-                current = current.next;
-            }
-            return head.next;
-
+            if (lists == null || lists.Length == 0)
+                return null;
+            return Merge(lists, 0, lists.Length -1);
         }
-        public static ListNode SortedMerge(ListNode a, ListNode b)
+        private ListNode Merge(ListNode[] lists,int i,int j)
         {
-            ListNode result = null;
-
-            /* Base cases */
-            if (a == null)
-                return b;
-            else if (b == null)
-                return a;
-
-            /* Pick either a or b, and recur */
-            if (a.val <= b.val)
-            {
-                result = a;
-                result.next = SortedMerge(a.next, b);
-            }
+            if (i == j)
+                return lists[i];
             else
             {
-                result = b;
-                result.next = SortedMerge(a, b.next);
-            }
+                int mid = i + (j - i) / 2;
+                ListNode left = Merge(lists, i, mid);
+                ListNode right = Merge(lists, mid + 1, j);
 
-            return result;
+                return Merge(left, right);
+            }
         }
-        public static ListNode mergeKLists(ListNode[] arr, int last)
+        private ListNode Merge(ListNode list1, ListNode list2)
         {
-            // repeat until only one list is left  
-            while (last != 0)
+            ListNode dummy = new ListNode(0),
+                cur = dummy;
+
+            while (list1 != null && list2 != null)
             {
-                int i = 0, j = last;
-
-                // (i, j) forms a pair  
-                while (i < j)
+                if (list1.val < list2.val)
                 {
-                    // merge List i with List j and store  
-                    // merged list in List i  
-                    arr[i] = SortedMerge(arr[i], arr[j]);
-
-                    // consider next pair  
-                    i++; j--;
-
-                    // If all pairs are merged, update last  
-                    if (i >= j)
-                        last = j;
+                    cur.next = list1;
+                    list1 = list1.next;
                 }
+                else
+                {
+                    cur.next = list2;
+                    list2 = list2.next;
+                }
+                cur = cur.next;
             }
 
-            return arr[0];
+            if (list1 != null)
+                cur.next = list1;
+            else
+                cur.next = list2;
+
+            return dummy.next;
         }
     }
     
